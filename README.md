@@ -1,33 +1,11 @@
-# OS Lab Assignment 9
+# OS Lab Assignment 9 — xv6-public (x86)
 
-## Environment
-- xv6-public (x86)
-- Ubuntu on WSL2
-- GCC, Make, QEMU
+Repository: [Manogna2304/OS-assignment-9](https://github.com/Manogna2304/OS-assignment-9)
 
-## Assignment 9
+## Organization
+- `kernel/`: xv6 kernel source files and kernel headers.
+- `user/`: xv6 user programs, user support files, and Assignment 9 tests (`pttest.c`, `faulttest.c`, `pagerepl.c`).
+- `screenshots/`: add screenshots from your final local test runs.
+- `REPORT.md`: short assignment report draft.
 
-### Q1: Page Table Inspection
-Implemented vmprint() to display valid user page mappings and test allocation using pttest.
-
-### Q2: Lazy Allocation
-Modified sbrk() to reserve virtual memory lazily, added page-fault handling, and implemented getfaults().
-Test program: faulttest.c
-
-### Q3: Page Replacement
-Implemented FIFO and LRU simulations for a reference string using 3, 4, and 5 frames.
-Test program: pagerepl.c
-
-## Build
-Run:
-    make clean
-    make
-
-## Run
-Run:
-    make qemu-nox
-
-At the xv6 shell:
-    pttest
-    faulttest
-    pagerepl
+**Build note:** upstream xv6-public originally keeps source files in one flat directory. These folders are an organized reference copy; the root Makefile and include paths must be adapted before building directly from this folder layout. Do not claim the reorganized tree builds until verified in Ubuntu/WSL.
